@@ -26,5 +26,4 @@ primary sorting algorithm, considering that there are better options, even when 
 sorting algorithms out there. If anything, this variant is best used as an educational tool, or as a reference in case this 2-pointer simultaneous swapping approach
 is also used to optimize some of the other existing sorting algorithms out there.
 
-This variant has also been made to show that Cocktail Shaker Sort still has significant room for improvement, but if anything, this might be the last improvement
-this specific sorting algorithm is going to get, before it turns into a different sorting algorithm altogether.
+This variant has also been made to show that Cocktail Shaker Sort still has significant room for improvement, this might be the last improvement this specific sorting algorithm is going to get, before it turns into a different sorting algorithm altogether.
