@@ -23,7 +23,7 @@ At first, it might seem that this variant has issues in the middle for both even
 # Purpose
 This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
 primary sorting algorithm, considering that there are better options, even when this variant is already meant to perform better than some of the other quadratic
-sorting algorithms out there. If anything, this variant is best used as an educational tool, or as a reference in case this 2-pointer simultaneous swapping approach
+sorting algorithms. If anything, this variant is best used as an educational tool, or as a reference in case this 2-pointer simultaneous swapping approach
 is also used to optimize some of the other existing sorting algorithms out there.
 
 This variant has also been made to show that Cocktail Shaker Sort (and by extension, Bubble Sort) still has significant room for improvement, this might be the last improvement this specific sorting algorithm is going to get, before it turns into a different sorting algorithm altogether.
