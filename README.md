@@ -4,7 +4,7 @@ Instead of just 1 forward and backward pass each, this variant performs both a f
 
 This variant has the optimizations of the original Cocktail Shaker Sort, the usage of a "swapped" boolean flag to detect a sorted array for early termination, as well as ignoring the sorted portions of the array per each successive iteration.
 
-This variant has the same time complexity as its predecessor, despite this variant performing 2 passes together at once.
+This variant has the same time complexity as its predecessor, despite performing 2 passes together at once.
 ```
 Best     Average     Worst     Memory     Stable     Deterministic
 O(n)      O(n²)      O(n²)      O(1)      Yes        Yes
