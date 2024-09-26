@@ -21,7 +21,7 @@ The way this variant works is that it has 1 outer loop, and 1 inner loop, compar
 At first, it might seem that this variant might have issues in the middle for both even and odd-length arrays, but thankfully, due to how the inner loop decides when to swap elements, it is ensured that simultaneous swapping will still work in the middle, without any need for explicit conditions on what to do.
 
 # Purpose
-This variant isn't going to compete with some of the more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
+This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
 primary sorting algorithm, considering that there are better options, even when this variant is already meant to perform better than some of the other quadratic
 sorting algorithms out there. If anything, this variant is best used as an educational tool, or as a reference in case this 2-pointer simultaneous swapping approach
 is also used to optimize some of the other existing sorting algorithms out there.
