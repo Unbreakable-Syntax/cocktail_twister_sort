@@ -18,7 +18,7 @@ I haven't added this into Cargo, if it is desired to use this sorting algorithm,
 # Overview
 The original variant has 2 inner loops, one for forward pass and one for backward pass, Cocktail Twister Sort works by having 1 inner loop only. The inner loop uses 2 pointers **i** and **j**, the **i** pointer pushes the bigger elements to the right side of the array, while the **j** pointer pushes the lesser elements to the left side of the array, and this is all done at the same time per iteration. The **j** pointer has a different way of deciding when to swap the lesser elements, it has the same idea as the backward pass of the original variant, but this change ensures that **j** will never go out of bounds, and for it to properly synchronize with the **i** pointer.
 
-At first, it might seem that this variant might have issues in the middle for both even and odd-length arrays, but due to how the inner loop decides when to swap elements, it is ensured that simultaneous swapping will still work in the middle, without any need for explicit conditions on what to do.
+At first, it might seem that this variant has issues in the middle for both even and odd-length arrays, but due to how the inner loop decides when to swap elements, it is ensured that simultaneous swapping will still work in the middle, without any need for explicit conditions on what to do.
 
 # Purpose
 This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
