@@ -1,7 +1,6 @@
 # Cocktail Twister Sort
 Cocktail Twister Sort is a sorting algorithm I've made after seeing how to improve upon Cocktail Shaker Sort while still retaining most of the core logic. 
-Instead of just 1 forward and backward pass each, this variant performs both a forward and backward pass together, in other words, it swaps 2 numbers instead of just 1 
-per iteration.
+Instead of just 1 forward and backward pass each, this variant performs both a forward and backward pass together per each iteration.
 
 This variant retains the optimizations of the original Cocktail Shaker Sort, the usage of swapped flag to detect a sorted array for early termination, as well as
 ignoring the sorted portions of the array per each successive iteration.
