@@ -8,6 +8,6 @@ ignoring the sorted portions of the array per each successive iteration.
 
 This variant retains most of the characteristics of its predecessor, including time complexity, despite this variant performing 2 passes at once.
 ```
-Best     Average     Worst     Memory     Stable     Adaptive     Deterministic
-O(n)      O(n²)      O(n²)      O(1)      Yes        Yes          Yes
+Best     Average     Worst     Memory     Stable     Deterministic
+O(n)      O(n²)      O(n²)      O(1)      Yes        Yes
 ```
