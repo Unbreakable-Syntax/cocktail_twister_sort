@@ -10,6 +10,8 @@ Best     Average     Worst     Memory     Stable     Deterministic
 O(n)      O(n²)      O(n²)      O(1)      Yes        Yes
 ```
 # Benchmark
+The benchmark below has been performed in my laptop, which has the Intel i3-1005G1 processor, the average sort time really depends on the input data and hardware you're using.
+Cocktail Twister Sort has been compared to Cocktail Shaker Sort, and Bubble Sort for different input distributions of i32.
 ![alt text](https://github.com/Unbreakable-Syntax/cocktail_twister_sort/blob/main/bars.png?raw=true)
 
 # Usage
