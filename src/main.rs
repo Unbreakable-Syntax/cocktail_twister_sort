@@ -19,7 +19,7 @@ fn cocktail_twister_sort(arr: &mut Vec<i32>)
         let mut j: usize = end - 1;
         for i in start..end - 1
         {
-            let m: usize = j;
+            let m: usize = j;  // Create a localized copy of j to help improve inner loop performance
             if arr[i] > arr[i + 1]
             {
                 arr.swap(i, i + 1);
