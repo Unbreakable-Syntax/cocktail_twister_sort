@@ -23,6 +23,11 @@ The original variant has 2 inner loops, one for forward pass and one for backwar
 
 At first, it might seem that this variant has issues in the middle for both even and odd-length arrays, but due to how the inner loop decides when to swap elements, it is ensured that simultaneous swapping will still work in the middle, without any need for explicit conditions on what to do.
 
+# Second pointer declaration options
+There are 3 ways to declare the **j** pointer. The first way is to declare the **j** pointer the usual way, which is by declaring it inside the "**while swapped == true**" loop and outside of the for loop, assign to it the value of **end - 1**, and then decrement **j** within the for loop. 
+The second way is to make the **j** pointer completely localized by declaring it inside the for loop and give it the following formula: **end - 1 - (i - start)**, this formula ensures that **j** is properly synchronized with the **i** pointer, without needing any bounds checks. 
+The third way is what the current implementation does, which is to declare the **j** pointer outside of the for loop, declare a new pointer in the for loop and assign the **j** pointer to it, and then modify all comparisons and swapping operations to now use this new pointer than the **j** pointer.
+
 # Purpose
 This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
 primary sorting algorithm, considering that there are better options, even when this variant is already meant to perform better than some of the other quadratic
