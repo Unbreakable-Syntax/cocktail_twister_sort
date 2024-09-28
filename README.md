@@ -28,7 +28,7 @@ There are 3 ways to declare the **j** pointer. The first way is to declare the *
 
 The second way is to make the **j** pointer completely localized by declaring it inside the for loop and give it the following formula: **end - 1 - (i - start)**, this formula ensures that **j** is properly synchronized with the **i** pointer, without needing any bounds checks. 
 
-The third way is what the current implementation does, which is to declare the **j** pointer outside of the for loop, declare a new pointer in the for loop and assign the **j** pointer to it, and then modify all comparisons and swapping operations to now use this new pointer than the **j** pointer.
+The third way is what the current implementation does, which is to declare the **j** pointer outside of the for loop, declare a new pointer in the for loop and assign the **j** pointer to it, and then modify all comparisons and swapping operations to now use this new pointer rather than the **j** pointer.
 
 # Purpose
 This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
