@@ -13,7 +13,7 @@ O(n)      O(n²)      O(n²)      O(1)      Yes        Yes
 The benchmark below has been performed in my laptop, which has the Intel i3-1005G1 processor, the average sort time really depends on the input data and hardware you're using.
 Cocktail Twister Sort has been compared to Cocktail Shaker Sort, and Bubble Sort for different input distributions of i32.
 
-![alt text](https://github.com/Unbreakable-Syntax/cocktail_twister_sort/blob/main/bars.png?raw=true)
+![alt text](https://github.com/Unbreakable-Syntax/cocktail_twister_sort/blob/main/bars_2.png?raw=true)
 
 # Usage
 I haven't added this into Cargo, if it is desired to use this sorting algorithm, please go to the main.rs file and copy the code, the total lines of code of this variant is almost similar to the original Cocktail Shaker Sort. This variant can be modified slightly to support other data types, such as Strings and struct instances.
