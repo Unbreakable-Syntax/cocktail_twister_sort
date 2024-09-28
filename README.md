@@ -10,7 +10,7 @@ Best     Average     Worst     Memory     Stable     Deterministic
 O(n)      O(n²)      O(n²)      O(1)      Yes        Yes
 ```
 # Benchmark
-(To be added)
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 # Usage
 I haven't added this into Cargo, if it is desired to use this sorting algorithm, please go to the main.rs file and copy the code, the total lines of code of this variant is almost similar to the original Cocktail Shaker Sort. This variant can be modified slightly to support other data types, such as Strings and struct instances.
