@@ -30,7 +30,7 @@ fn cocktail_twister_sort(arr: &mut Vec<i32>)
                 arr.swap(j, j - 1);
                 swapped = true;
             }
-            j -= 1;  // Do not decrement if j pointer is inside the inner loop
+            j -= 1;  // Do not decrement j if j pointer is inside the inner loop
         }
         start += 1;
         end -= 1;
