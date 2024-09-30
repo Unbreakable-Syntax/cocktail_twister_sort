@@ -19,18 +19,18 @@ fn cocktail_twister_sort(arr: &mut Vec<i32>)
         let mut j: usize = end - 1;
         for i in start..end - 1
         {
-            let m: usize = j;  // Create a localized copy of j to help improve inner loop performance
+            // let j: usize = end - 1 - (i - start);
             if arr[i] > arr[i + 1]
             {
                 arr.swap(i, i + 1);
                 swapped = true;
             }
-            if arr[m] < arr[m - 1]
+            if arr[j] < arr[j - 1]
             {
-                arr.swap(m, m - 1);
+                arr.swap(j, j - 1);
                 swapped = true;
             }
-            j -= 1;
+            j -= 1;  // Do not decrement if j pointer is inside the inner loop
         }
         start += 1;
         end -= 1;
