@@ -10,7 +10,6 @@ package com.mycompany.cocktailtwistersort;
  */
 public class CocktailTwisterSort 
 {
-
     public static void main(String[] args) 
     {
         System.out.println("Hello World!");
