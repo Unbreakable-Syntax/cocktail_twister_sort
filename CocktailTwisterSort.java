@@ -6,7 +6,7 @@ package com.mycompany.cocktailtwistersort;
 
 /**
  *
- * @author Owen
+ * @author Percival
  */
 public class CocktailTwisterSort 
 {
