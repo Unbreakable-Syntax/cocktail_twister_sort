@@ -12,12 +12,12 @@ fn cocktail_twister_sort(arr: &mut Vec<i32>)
     if arr.len() <= 1 { return; }
     let mut swapped: bool = true;
     let mut start: usize = 0;
-    let mut end: usize = arr.len();
+    let mut end: usize = arr.len() - 1;
     while swapped == true
     {
         swapped = false;
-        let mut j: usize = end - 1;  // Remove this line if declaring j inside the inner loop is preferred
-        for i in start..end - 1
+        let mut j: usize = end;  // Remove this line if declaring j inside the inner loop is preferred
+        for i in start..end
         {
             // let j: usize = end - 1 - (i - start);
             if arr[i] > arr[i + 1]
