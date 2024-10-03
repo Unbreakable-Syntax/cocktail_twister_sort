@@ -20,11 +20,11 @@ public class CocktailTwisterSort
         if (arr.length <= 1) { return arr; }
         boolean swapped = true;
         int start = 0;
-        int end = arr.length;
+        int end = arr.length - 1;
         while (swapped == true)
         {
             swapped = false;
-            for (int i = start, j = end - 1; i < end - 1; ++i, --j)
+            for (int i = start, j = end; i < end; ++i, --j)
             {
                 if (arr[i] > arr[i + 1])
                 {
