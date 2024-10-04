@@ -2,7 +2,7 @@
 Cocktail Twister Sort is a sorting algorithm I've made after seeing how to improve upon Cocktail Shaker Sort while still retaining most of the core logic. 
 Instead of just 1 forward and backward pass each, this variant performs both a forward and backward pass together per each iteration.
 
-This variant has the optimizations of the original Cocktail Shaker Sort, the usage of a "swapped" boolean flag to detect a sorted array for early termination, as well as ignoring the sorted portions of the array per each successive iteration.
+This variant has the optimizations of the original Cocktail Shaker Sort, the usage of a "swapped" boolean flag to detect a sorted array forearly termination, as well as ignoring the sorted portions of the array per each successive iteration.
 
 This variant has the same time complexity as its predecessor, despite performing 2 passes together at once.
 ```
@@ -14,6 +14,10 @@ The benchmark below has been performed in my laptop, which has the Intel i3-1005
 Cocktail Twister Sort has been compared to Cocktail Shaker Sort, and Bubble Sort for different input distributions of i32.
 
 ![alt text](https://github.com/Unbreakable-Syntax/cocktail_twister_sort/blob/main/bars_2.png?raw=true)
+
+# Visualization
+Here is a visualization of Cocktail Twister Sort, sorting 512 elements in randomized order. The visualization is produced using Timo Bingmann's [The Sound of Sorting](https://github.com/bingmann/sound-of-sorting/)
+https://github.com/user-attachments/assets/ac5dfe67-ec66-420d-bc11-4b2b5357b344
 
 # Usage
 I haven't added this into Cargo, if it is desired to use this sorting algorithm, please go to the main.rs file and copy the code, the total lines of code of this variant is almost similar to the original Cocktail Shaker Sort. This variant can be modified slightly to support other data types, such as Strings and struct instances.
