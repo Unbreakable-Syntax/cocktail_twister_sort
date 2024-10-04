@@ -16,7 +16,7 @@ Cocktail Twister Sort has been compared to Cocktail Shaker Sort, and Bubble Sort
 ![alt text](https://github.com/Unbreakable-Syntax/cocktail_twister_sort/blob/main/bars_2.png?raw=true)
 
 # Visualization
-Here is a visualization of Cocktail Twister Sort, sorting 512 elements in randomized order. The visualization is produced using Timo Bingmann's [The Sound of Sorting](https://github.com/bingmann/sound-of-sorting/)
+Here is a visualization of Cocktail Twister Sort, sorting 512 elements in ascending order. The visualization is produced using Timo Bingmann's [The Sound of Sorting](https://github.com/bingmann/sound-of-sorting/)
 
 https://github.com/user-attachments/assets/ac5dfe67-ec66-420d-bc11-4b2b5357b344
 
