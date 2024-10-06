@@ -110,7 +110,7 @@ public class CocktailTwisterSort
     public static void backwardBoundaryReduce(int[] arr)
     {
         boolean swapped = false;
-        int high = 0;
+        int high = arr.length - 1;
         for (int i = arr.length - 1; i >= 1; --i)
         {
             if (arr[i] < arr[i - 1])
@@ -131,6 +131,7 @@ public class CocktailTwisterSort
     // This method is intended to be used on the original Cocktail Twister Sort
     // To allow the original variant to also have the dynamic boundary shrinking feature
     // Resulting in performance improvement for pre-sorted data
+    // To use, only call this method, not the sorting algorithm itself
     public static void boundaryReduce(int[] arr)
     {
         boolean swapped = false;
