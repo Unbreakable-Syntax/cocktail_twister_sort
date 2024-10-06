@@ -56,8 +56,8 @@ Although there is now a variant of Cocktail Twister Sort that is capable of focu
 For unsorted portions that sit only in the middle, the unsorted portion does not reach the beginning or the end of the array, then the default bidirectional first pass is the only way for the algorithm to properly focus on this unsorted portion.
 
 However, for unsorted portions that stretch all the way to either side of the array, the first pass can be made faster (this also introduces some slight speed boost for fully randomized array):
-* Backward pass only - This first pass optimization is useful for scrambled tail input, as the i (left) pointer would only be checked on where it must begin.
-* Forward pass only - Inversely, this first pass optimization is useful for scrambled head input, as this would mean that only the i (right) pointer would be checked on where it should begin.
+* Backward pass only - This first pass optimization is useful for scrambled tail input, as the start (left) pointer would only be checked on where it must begin.
+* Forward pass only - Inversely, this first pass optimization is useful for scrambled head input, as this would mean that only the end (right) pointer would be checked on where it should begin.
 
 Both of these passes will work on vice versa just fine (backward pass for scrambled head), but if this is going to happen, after the first pass to check where the pointer must begin, the second pass would be 1 full bidirectional pass, this needs to happen to "correct" the other unmodified pointer, and then the third pass will be both pointers properly focusing on the unsorted region of the array.
 
