@@ -51,17 +51,17 @@ fn cocktail_twister_sort_b(arr: &mut Vec<i32>)
     {
         let mut lo: usize = 0;
         let mut hi: usize = 0;
-        let mut j: usize = end;
-        for i in start..end
+        let mut j: usize = end - 1;
+        for i in start + 1..=end
         {
-            if arr[i] > arr[i + 1]
+            if arr[i - 1] > arr[i]
             {
-                arr.swap(i, i + 1);
+                arr.swap(i, i - 1);
                 lo = i;
             }
-            if arr[j] < arr[j - 1]
+            if arr[j + 1] < arr[j]
             {
-                arr.swap(j, j - 1);
+                arr.swap(j, j + 1);
                 hi = j;
             }
             j -= 1;
