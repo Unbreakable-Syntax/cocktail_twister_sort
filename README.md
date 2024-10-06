@@ -49,6 +49,18 @@ For the 2 pointer swapping to remain synchronized and within bounds, even if onl
 **Mirrored tail comparison** - The i and j pointer will check for the elements behind them (i - 1, j + 1), to see if the elements are out of order. This is what the more adaptive variant uses.
 
 It has been proven by me that the mirrored tail comparison is robust for the more adaptive Cocktail Twister Sort variant, I have tested it by using an array of length = 100 and length = 101, 75% sorted. Across 100 runs, the mirrored head strategy fails before reaching 100, while the mirrored tail strategy completes all 100 runs.
+
+# Adaptiveness
+Although there is now a variant of Cocktail Twister Sort that is capable of focusing on unsorted portions of the array. The main problem (that's why it can be slow) is the initial first pass, and there are certainly ways to help "rectify" this.
+
+For unsorted portions that sit only in the middle, the unsorted portion does not reach the beginning or the end of the array, then the default bidirectional first pass is the only way for the algorithm to properly focus on this unsorted portion.
+
+However, for unsorted portions that lie stretch on all the way to either side of the array, the first pass can be made faster:
+* Backward pass only - This first pass optimization is useful for scrambled tail input, as the i (left) pointer would only be checked on where it must begin.
+* Forward pass only - Inversely, this first pass optimization is useful for scrambled head input, as this would mean that only the i (right) pointer would be checked on where it should begin.
+Both of these passes will work on vice versa just fine (backward pass for scrambled head), but if this is going to happen, after the first pass to check where the pointers must begin, the second pass would be 1 full bidirectional pass, this needs to happen to "correct" the other unmodified pointer, and then the third pass willbe both pointers properly focusing on the unsorted region of the array.
+
+
 # Purpose
 This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
 primary sorting algorithm, considering that there are better options, even when this variant is already meant to perform better than some of the other quadratic
