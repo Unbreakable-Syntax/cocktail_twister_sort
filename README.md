@@ -61,7 +61,7 @@ However, for unsorted portions that stretch all the way to either side of the ar
 
 Both of these passes will work on vice versa just fine (backward pass for scrambled head), but if this is going to happen, after the first pass to check where the pointer must begin, the second pass would be 1 full bidirectional pass, this needs to happen to "correct" the other unmodified pointer, and then the third pass will be both pointers properly focusing on the unsorted region of the array.
 
-These boundary reduction passes could also be safely used with the original Cocktail Twister Sort, as long as these passes are used on their intended scrambled inputs (backward pass for scrambled tail), this will yield correct results. This combination might also result in (probably) lesser overhead.
+These boundary reduction passes could also safely be used with the original Cocktail Twister Sort, as long as these passes are used on their intended scrambled inputs (backward pass for scrambled tail), this will yield correct results. This combination might also result in (probably) lesser overhead.
 
 # Purpose
 This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
