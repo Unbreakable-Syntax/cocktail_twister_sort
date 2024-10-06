@@ -37,6 +37,40 @@ fn cocktail_twister_sort(arr: &mut Vec<i32>)
     }
 }
 
+// A new experimental variant of Cocktail Twister Sort that I developed recently
+// This is based on an even more optimized Cocktail Shaker Sort
+// That can quickly sort arrays where only a portion of it is unsorted, the rest is sorted
+// This variant is essentially more adaptive than the above implementation
+// It also doesn't need a swapped boolean because of this change
+fn cocktail_twister_sort_b(arr: &mut Vec<i32>)
+{
+    if arr.len() <= 1 { return; }
+    let mut start: usize = 0;
+    let mut end: usize = arr.len() - 1;
+    while start < end
+    {
+        let mut lo: usize = 0;
+        let mut hi: usize = 0;
+        let mut j: usize = end;
+        for i in start..end
+        {
+            if arr[i] > arr[i + 1]
+            {
+                arr.swap(i, i + 1);
+                lo = i;
+            }
+            if arr[j] < arr[j - 1]
+            {
+                arr.swap(j, j - 1);
+                hi = j;
+            }
+            j -= 1;
+        }
+        start = hi;
+        end = lo;
+    }
+}
+
 fn shuffle_array(arr: &mut Vec<i32>)
 {
     let mut rand: rand::rngs::ThreadRng = thread_rng();
