@@ -71,6 +71,10 @@ fn cocktail_twister_sort_b(arr: &mut Vec<i32>)
     }
 }
 
+// These methods can be used to reduce the overhead of the first pass
+// Choose which methods you will use to your own mileage
+// To use, call the boundary reduction method only, not the sorting algorithm itself
+
 fn backward_boundary_reduce(arr: &mut Vec<i32>)
 {
     let mut high: usize = 0;
