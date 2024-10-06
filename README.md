@@ -59,7 +59,7 @@ However, for unsorted portions that stretch all the way to either side of the ar
 * Backward pass only - This first pass optimization is useful for scrambled tail input, as the i (left) pointer would only be checked on where it must begin.
 * Forward pass only - Inversely, this first pass optimization is useful for scrambled head input, as this would mean that only the i (right) pointer would be checked on where it should begin.
 
-Both of these passes will work on vice versa just fine (backward pass for scrambled head), but if this is going to happen, after the first pass to check where the pointers must begin, the second pass would be 1 full bidirectional pass, this needs to happen to "correct" the other unmodified pointer, and then the third pass willbe both pointers properly focusing on the unsorted region of the array.
+Both of these passes will work on vice versa just fine (backward pass for scrambled head), but if this is going to happen, after the first pass to check where the pointer must begin, the second pass would be 1 full bidirectional pass, this needs to happen to "correct" the other unmodified pointer, and then the third pass willbe both pointers properly focusing on the unsorted region of the array.
 
 # Purpose
 This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
