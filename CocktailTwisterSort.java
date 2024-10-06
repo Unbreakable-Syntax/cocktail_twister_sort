@@ -81,4 +81,50 @@ public class CocktailTwisterSort
         }
         return arr;
     }
+
+    // These methods can be used to reduce the overhead of the first pass
+    // Choose which methods you will use to your own mileage
+    // To use, call the boundary reduction method only, not the sorting algorithm itself
+    
+    public static void forwardBoundaryReduce(int[] arr)
+    {
+        boolean swapped = false;
+        int low = 0;
+        for (int i = 0; i < arr.length - 1; ++i)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                swapped = true;
+                low = i;
+                int temp = arr[i + 1];
+                arr[i + 1] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        if (swapped == false) { return; }
+        // Modify the adaptive version to take int low as extra argument
+        // Then, assign the value of low to the end variable
+        // cocktailTwisterSort(arr, low);
+    }
+    
+    public static void backwardBoundaryReduce(int[] arr)
+    {
+        boolean swapped = false;
+        int high = 0;
+        for (int i = arr.length - 1; i >= 1; --i)
+        {
+            if (arr[i] < arr[i - 1])
+            {
+                swapped = true;
+                high = i;
+                int temp = arr[i - 1];
+                arr[i - 1] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        if (swapped == false) { return; }
+        // Modify the adaptive version to take int high as extra argument
+        // Then, assign the value of high to the start variable
+        // cocktailTwisterSort(arr, high);
+    }
 }
