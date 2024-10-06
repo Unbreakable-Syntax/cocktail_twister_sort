@@ -71,6 +71,44 @@ fn cocktail_twister_sort_b(arr: &mut Vec<i32>)
     }
 }
 
+fn backward_boundary_reduce(arr: &mut Vec<i32>)
+{
+    let mut high: usize = 0;
+    let mut sorted: bool = true;
+    for j in (1..arr.len()).rev()
+    {
+        if arr[j] < arr[j - 1]
+        {
+            high = j;
+            arr.swap(j, j - 1);
+            sorted = false;
+        }
+    }
+    if sorted == true { return; }
+    // Modify the adaptive version to take usize high as extra argument
+    // Then, assign the value of high to the start variable
+    cocktail_twister_sort_b(arr, high);
+}
+
+fn forward_boundary_reduce(arr: &mut Vec<i32>)
+{
+    let mut low: usize = 0;
+    let mut sorted: bool = true;
+    for i in 0..arr.len() - 1
+    {
+        if arr[i] > arr[i + 1]
+        {
+            low = i;
+            arr.swap(i, i + 1);
+            sorted = false;
+        }
+    }
+    if sorted == true { return; }
+    // Modify the adaptive version to take usize low as extra argument
+    // Then, assign the value of low to the end variable
+    cocktail_twister_sort_b(arr, low);
+}
+
 fn shuffle_array(arr: &mut Vec<i32>)
 {
     let mut rand: rand::rngs::ThreadRng = thread_rng();
