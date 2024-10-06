@@ -20,6 +20,10 @@ Here is a visualization of Cocktail Twister Sort, sorting 512 elements in ascend
 
 https://github.com/user-attachments/assets/ac5dfe67-ec66-420d-bc11-4b2b5357b344
 
+Here is a visualization of a more adaptive Cocktail Twister Sort that I have implemented recently, sorting 512 elements that is 25%, 50%, and 75% sorted, in ascending order.
+
+https://github.com/user-attachments/assets/01bb93ea-46c2-4a27-92bf-ad03867f9e40
+
 # Usage
 I haven't added this into Cargo, if it is desired to use this sorting algorithm, please go to the main.rs file and copy the code, the total lines of code of this variant is almost similar to the original Cocktail Shaker Sort. This variant can be modified slightly to support other data types, such as Strings and struct instances.
 
