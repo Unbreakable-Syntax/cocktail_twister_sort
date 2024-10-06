@@ -13,6 +13,8 @@ O(n)      O(n²)      O(n²)      O(1)      Yes        Yes
 The benchmark below has been performed in my laptop, which has the Intel i3-1005G1 processor, the average sort time really depends on the input data and hardware you're using.
 Cocktail Twister Sort has been compared to Cocktail Shaker Sort, and Bubble Sort for different input distributions of i32.
 
+The Cocktail Shaker Sort that was used in this benchmark is the variant that only uses a swapped flag, and it does not have the capability to "focus" on unsorted portions of the array, but it does ignore the sorted portions per iteration. As such, the variant of Cocktail Twister Sort that works exactly like the mentioned Cocktail Shaker Sort variant was used in this benchmark.
+
 ![alt text](https://github.com/Unbreakable-Syntax/cocktail_twister_sort/blob/main/bars_2.png?raw=true)
 
 # Visualization
