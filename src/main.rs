@@ -42,6 +42,7 @@ fn cocktail_twister_sort(arr: &mut Vec<i32>)
 // That can quickly sort arrays where only a portion of it is unsorted, the rest is sorted
 // This variant is essentially more adaptive than the above implementation
 // It also doesn't need a swapped boolean because of this change
+// This variant uses the mirrored tail comparison
 fn cocktail_twister_sort_b(arr: &mut Vec<i32>)
 {
     if arr.len() <= 1 { return; }
@@ -77,7 +78,7 @@ fn cocktail_twister_sort_b(arr: &mut Vec<i32>)
 
 fn backward_boundary_reduce(arr: &mut Vec<i32>)
 {
-    let mut high: usize = 0;
+    let mut high: usize = arr.len() - 1;
     let mut sorted: bool = true;
     for j in (1..arr.len()).rev()
     {
@@ -111,6 +112,40 @@ fn forward_boundary_reduce(arr: &mut Vec<i32>)
     // Modify the adaptive version to take usize low as extra argument
     // Then, assign the value of low to the end variable
     cocktail_twister_sort_b(arr, low);
+}
+
+// This method is intended to be used on the original Cocktail Twister Sort
+// To allow the original variant to also have the dynamic boundary shrinking feature
+// Resulting in performance improvement for pre-sorted data
+// To use, only call this method, not the sorting algorithm itself
+// It is recommended to convert the original variant to use the mirrored tail comparison first
+// To always ensure correct results
+fn boundary_reduce(arr: &mut Vec<i32>)
+{
+    let mut high: usize = arr.len() - 1;
+    let mut low: usize = 0;
+    let mut sorted: bool = true;
+    let mut j: usize = arr.len() - 1;
+    for i in 0..arr.len() - 1
+    {
+        if arr[i] > arr[i + 1]
+        {
+            low = i;
+            arr.swap(i, i + 1);
+            sorted = false;
+        }
+        if arr[j] < arr[j - 1]
+        {
+            high = j;
+            arr.swap(j, j - 1);
+            sorted = false;
+        }
+        j -= 1;
+    }
+    if sorted == true { return; }
+    // Modify the original Cocktail Twister Sort to have 2 extra arguments
+    // Then, assign low to end, assign high to start
+    // cocktail_twister_sort(arr, low, high);
 }
 
 fn shuffle_array(arr: &mut Vec<i32>)
