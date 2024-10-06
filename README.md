@@ -46,7 +46,7 @@ For the 2 pointer swapping to remain synchronized and within bounds, even if onl
 
 **Mirrored tail comparison** - The i and j pointer will check for the elements behind them (i - 1, j + 1), to see if the elements are out of order. This is what the more adaptive variant uses.
 
-Tt has been proven by me that the mirrored tail comparison is more robust for the more adaptive Cocktail Twister Sort variant, I have tested it by using an array of length = 100 and length = 101, 75% sorted. Across 100 runs, the mirrored head strategy fails before reaching 100, while the mirrored tail strategy completes all 100 runs.
+It has been proven by me that the mirrored tail comparison is robust for the more adaptive Cocktail Twister Sort variant, I have tested it by using an array of length = 100 and length = 101, 75% sorted. Across 100 runs, the mirrored head strategy fails before reaching 100, while the mirrored tail strategy completes all 100 runs.
 # Purpose
 This variant isn't going to compete against more practical sorting algorithms like Merge Sort and Quick Sort, this variant also isn't meant to be used as a
 primary sorting algorithm, considering that there are better options, even when this variant is already meant to perform better than some of the other quadratic
