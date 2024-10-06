@@ -59,20 +59,20 @@ public class CocktailTwisterSort
         while (start < end)
         {
             int lo_mov = 0, hi_mov = 0;
-            for (int i = start, j = end; i < end; ++i, --j)
+            for (int i = start + 1, j = end - 1; i <= end; ++i, --j)
             {
-                if (arr[i] > arr[i + 1])
+                if (arr[i - 1] > arr[i])
                 {
                     lo_mov = i;
-                    int temp = arr[i + 1];
-                    arr[i + 1] = arr[i];
+                    int temp = arr[i - 1];
+                    arr[i - 1] = arr[i];
                     arr[i] = temp;
                 }
-                if (arr[j] < arr[j - 1])
+                if (arr[j + 1] < arr[j])
                 {
                     hi_mov = j;
-                    int temp = arr[j - 1];
-                    arr[j - 1] = arr[j];
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
                     arr[j] = temp;
                 }
             }
