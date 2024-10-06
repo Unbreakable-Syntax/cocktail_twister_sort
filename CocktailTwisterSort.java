@@ -55,12 +55,10 @@ public class CocktailTwisterSort
     public static int[] cocktailTwisterSortB(int[] arr)
     {
         if (arr.length <= 1) { return arr; }
-        int start = 0;
-        int end = arr.length - 1;
+        int start = 0, end = arr.length - 1;
         while (start < end)
         {
-            int lo_mov = 0;
-            int hi_mov = 0;
+            int lo_mov = 0, hi_mov = 0;
             for (int i = start, j = end; i < end; ++i, --j)
             {
                 if (arr[i] > arr[i + 1])
