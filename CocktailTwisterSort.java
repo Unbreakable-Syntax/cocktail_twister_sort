@@ -52,6 +52,7 @@ public class CocktailTwisterSort
     // That can quickly sort arrays where only a portion of it is unsorted, the rest is sorted
     // This variant is essentially more adaptive than the above implementation
     // It also doesn't need a swapped boolean because of this change
+    // This variant uses the mirrored tail comparison
     public static int[] cocktailTwisterSortB(int[] arr)
     {
         if (arr.length <= 1) { return arr; }
@@ -132,6 +133,8 @@ public class CocktailTwisterSort
     // To allow the original variant to also have the dynamic boundary shrinking feature
     // Resulting in performance improvement for pre-sorted data
     // To use, only call this method, not the sorting algorithm itself
+    // It is recommended to convert the original variant to use the mirrored tail comparison first
+    // To always ensure correct results
     public static void boundaryReduce(int[] arr)
     {
         boolean swapped = false;
