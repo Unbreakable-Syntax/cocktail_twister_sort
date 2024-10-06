@@ -104,7 +104,7 @@ public class CocktailTwisterSort
         if (swapped == false) { return; }
         // Modify the adaptive version to take int low as extra argument
         // Then, assign the value of low to the end variable
-        // cocktailTwisterSort(arr, low);
+        // cocktailTwisterSortB(arr, low);
     }
     
     public static void backwardBoundaryReduce(int[] arr)
@@ -125,6 +125,6 @@ public class CocktailTwisterSort
         if (swapped == false) { return; }
         // Modify the adaptive version to take int high as extra argument
         // Then, assign the value of high to the start variable
-        // cocktailTwisterSort(arr, high);
+        // cocktailTwisterSortB(arr, high);
     }
 }
