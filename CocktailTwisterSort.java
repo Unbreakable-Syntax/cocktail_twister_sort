@@ -127,4 +127,36 @@ public class CocktailTwisterSort
         // Then, assign the value of high to the start variable
         // cocktailTwisterSortB(arr, high);
     }
+
+    // This method is intended to be used on the original Cocktail Twister Sort
+    // To allow the original variant to also have the dynamic boundary shrinking feature
+    // Resulting in performance improvement for pre-sorted data
+    public static void boundaryReduce(int[] arr)
+    {
+        boolean swapped = false;
+        int low = 0, high = arr.length - 1;
+        for (int i = 0, j = arr.length - 1; i < arr.length - 1; ++i, --j)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                swapped = true;
+                low = i;
+                int temp = arr[i + 1];
+                arr[i + 1] = arr[i];
+                arr[i] = temp;
+            }
+            if (arr[j] < arr[j - 1])
+            {
+                swapped = true;
+                high = j;
+                int temp = arr[j - 1];
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        if (swapped == false) { return; }
+        // Modify the original Cocktail Twister Sort method to take 2 extra arguments
+        // After that, assign low to end, assign high to start
+        // cocktailTwisterSort(arr, low, high);
+    }
 }
