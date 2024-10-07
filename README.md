@@ -44,9 +44,9 @@ The third way is to declare the **j** pointer outside of the for loop, declare a
 # Comparison strategies
 For the 2 pointer swapping to remain synchronized and within bounds, even if only 1 of the 2 pointers are being checked, there are 2 ways to implement this approach.
 
-**Mirrored head comparison** - The i and j pointer will check for the elements in front of them (i + 1, j - 1), to see if the elements are out of order and must be swapped. This is what the less adaptive variant uses.
+* **Mirrored head comparison** - The i and j pointer will check for the elements in front of them (i + 1, j - 1), to see if the elements are out of order and must be swapped. This is what the less adaptive variant uses.
 
-**Mirrored tail comparison** - The i and j pointer will check for the elements behind them (i - 1, j + 1), to see if the elements are out of order. This is what the more adaptive variant uses.
+* **Mirrored tail comparison** - The i and j pointer will check for the elements behind them (i - 1, j + 1), to see if the elements are out of order. This is what the more adaptive variant uses.
 
 It has been proven by me that the mirrored tail comparison is robust for the more adaptive Cocktail Twister Sort variant, I have tested it by using an array of length = 100 and length = 101, 75% sorted. Across 100 runs, the mirrored head strategy fails before reaching 100, while the mirrored tail strategy completes all 100 runs.
 
@@ -56,8 +56,8 @@ Although there is now a variant of Cocktail Twister Sort that is capable of focu
 For unsorted portions that sit only in the middle, the unsorted portion does not reach the beginning or the end of the array, then the default bidirectional first pass is the only way for the algorithm to properly focus on this unsorted portion.
 
 However, for unsorted portions that stretch all the way to either side of the array, the first pass can be made faster (the only reason why any of these passes should be preferred is if it's desired by the user to slightly optimize the sorting algorithm for a specific scrambled input):
-* Backward pass only - This first pass optimization is useful for scrambled tail input, as the start (left) pointer would only be checked on where it must begin.
-* Forward pass only - Inversely, this first pass optimization is useful for scrambled head input, as only the end (right) pointer would be checked on where it should begin.
+* **Backward pass only** - This first pass optimization is useful for scrambled tail input, as the start (left) pointer would only be checked on where it must begin.
+* **Forward pass only** - Inversely, this first pass optimization is useful for scrambled head input, as only the end (right) pointer would be checked on where it should begin.
 
 Both of these passes will work on non-intended scrambled inputs just fine (backward pass for scrambled head), but if this is going to happen, after the first pass to check where the pointer must begin, the second pass will be 1 full bidirectional pass, this needs to happen to "correct" the other unmodified pointer, and then the third pass will be both pointers properly focusing on the unsorted region of the array.
 
